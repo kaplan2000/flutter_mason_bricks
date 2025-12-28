@@ -1,6 +1,6 @@
 name: page
 description: Creates a new page and its ViewModel/state inside an existing feature.
-version: 0.1.1
+version: 0.1.2
 repository: https://github.com/kaplan2000/flutter-mason-bricks
 
 environment:
@@ -15,4 +15,9 @@ vars:
     type: string
     description: The name of the page (snake_case)
     prompt: What is the name of the page?
+  use_autoroute:
+    type: boolean
+    description: Whether to use AutoRoute for this page
+    default: true
+    prompt: Do you want to use AutoRoute for this page?
 

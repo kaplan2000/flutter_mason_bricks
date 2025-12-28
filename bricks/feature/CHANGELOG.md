@@ -2,6 +2,12 @@
 
 All notable changes to the `feature` brick will be documented in this file.
 
+## [0.1.2] - 2025-12-28
+
+### Changed
+
+- Bumped version to align with the new brick collection release.
+
 ## [0.1.1] - 2025-12-28
 
 ### Fixed

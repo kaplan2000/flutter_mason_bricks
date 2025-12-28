@@ -1,6 +1,6 @@
 name: flow
 description: Creates a full data flow skeleton (domain → data) for a feature.
-version: 0.1.1
+version: 0.1.2
 repository: https://github.com/kaplan2000/flutter-mason-bricks
 
 environment:
