@@ -6,7 +6,7 @@ A collection of opinionated [Mason](https://github.com/felangel/mason) bricks fo
 
 | Brick                   | Description                                                       | Version |
 | ----------------------- | ----------------------------------------------------------------- | ------- |
-| [setup](./bricks/setup) | Initial Flutter project setup with MVVM, Riverpod, and AutoRoute. | 0.1.1   |
+| [setup](./bricks/setup) | Initial Flutter project setup with MVVM, Riverpod, and AutoRoute. | 0.0.1   |
 
 ## Usage
 
