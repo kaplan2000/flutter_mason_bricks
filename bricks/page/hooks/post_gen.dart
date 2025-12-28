@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:mason/mason.dart';
-import 'package:recase/recase.dart';
 import 'package:yaml/yaml.dart';
 
 Future<void> run(HookContext context) async {

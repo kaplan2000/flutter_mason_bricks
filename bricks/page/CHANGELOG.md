@@ -2,6 +2,12 @@
 
 All notable changes to the `page` brick will be documented in this file.
 
+## [0.1.4] - 2025-12-28
+
+### Fixed
+
+- Removed redundant `recase` dependency in hooks to fix compilation error caused by extension conflict with `mason`.
+
 ## [0.1.3] - 2025-12-28
 
 ### Added
