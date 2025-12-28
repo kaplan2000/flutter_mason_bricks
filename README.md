@@ -7,9 +7,9 @@ A collection of opinionated [Mason](https://github.com/felangel/mason) bricks fo
 | Brick                       | Description                                                            | Version |
 | --------------------------- | ---------------------------------------------------------------------- | ------- |
 | [setup](./bricks/setup)     | Initial Flutter project setup with MVVM, Riverpod, and AutoRoute.      | 0.1.0   |
-| [feature](./bricks/feature) | Creates a new feature folder with base clean architecture structure.   | 0.1.0   |
-| [page](./bricks/page)       | Creates a new page and its ViewModel/state inside an existing feature. | 0.1.0   |
-| [flow](./bricks/flow)       | Creates a full data flow skeleton (domain → data) for a feature.       | 0.1.0   |
+| [feature](./bricks/feature) | Creates a new feature folder with base clean architecture structure.   | 0.1.1   |
+| [page](./bricks/page)       | Creates a new page and its ViewModel/state inside an existing feature. | 0.1.1   |
+| [flow](./bricks/flow)       | Creates a full data flow skeleton (domain → data) for a feature.       | 0.1.1   |
 
 ## Usage
 

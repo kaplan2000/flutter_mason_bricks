@@ -3,3 +3,4 @@ abstract class {{feature_name.pascalCase()}}{{flow_name.pascalCase()}}MockDataSo
   // TODO: Add mock data source methods
   Future<dynamic> get{{flow_name.pascalCase()}}();
 }
+
