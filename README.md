@@ -16,7 +16,7 @@ To use these bricks, create or update your `mason.yaml` file in your Flutter pro
 bricks:
   setup:
     git:
-      url: https://github.com/kaplan2000/flutter-mason-bricks
+      url: https://github.com/kaplan2000/flutter_mason_bricks
       path: bricks/setup
       # Use 'ref' to lock to a specific version (tag or commit)
       ref: v0.0.1
