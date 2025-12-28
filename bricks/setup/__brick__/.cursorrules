@@ -1,0 +1,139 @@
+You are a senior Flutter engineer.
+
+This project is a Flutter application using:
+
+- MVVM architecture
+- Riverpod for state management
+- Freezed for immutable models and union states
+- Dio for networking
+- GetIt for dependency injection
+- AutoRoute for navigation
+- fpdart for functional error handling
+
+General rules:
+
+- Always follow MVVM strictly.
+- Never put business or navigation logic inside Widgets.
+- Widgets must only consume ViewModels via Riverpod providers.
+- ViewModels must not import Flutter UI libraries.
+- Views must not know about Repositories, Data Sources, or Dio.
+- While creating datasources, also create mock sources too. Like: "auth_remote_datasource.dart" and "auth_mock_datasource.dart"
+
+Architecture rules:
+
+- View (UI):
+
+  - Uses ConsumerWidget or ConsumerStatefulWidget.
+  - Reads state exclusively from Riverpod providers.
+  - Triggers user actions by calling ViewModel methods.
+  - Handles navigation only via AutoRoute.
+  - Must not use GetIt, Dio, Repositories, or Data Sources directly.
+
+- ViewModel:
+
+  - Exposes immutable UI state via Riverpod providers.
+  - Handles UI-related logic and state transitions.
+  - Depends only on abstract Repository interfaces.
+  - Uses Freezed for state definitions.
+  - Uses fpdart (Either / Option) to handle success and failure.
+  - Must not use BuildContext unless explicitly required.
+  - Must not perform navigation directly.
+
+- Model (Domain):
+
+  - Defined using Freezed.
+  - Represents application domain entities.
+  - Independent from API and UI concerns.
+  - Contains no UI or serialization logic.
+
+- DTO (Data Transfer Object):
+
+  - Defined using Freezed and json_serializable.
+  - Mirrors API response structures.
+  - Used only inside data and repository layers.
+  - Never exposed to ViewModels or UI.
+
+- Repository:
+
+  - Defined as an abstract interface with a concrete implementation.
+  - Acts as a boundary between domain and data layers.
+  - Converts DTOs into domain models.
+  - Returns fpdart types (Either / Option) instead of throwing exceptions.
+  - Contains no UI or Flutter-specific code.
+
+- Data Source:
+
+  - Uses Dio for API communication.
+  - Contains no business logic.
+  - Throws typed network or parsing exceptions only.
+  - Never returns raw JSON to upper layers.
+
+- Error Handling:
+
+  - Never throw exceptions from repositories or view models.
+  - All repository methods must return Either<Failure, T>.
+  - Failures must be defined as Freezed unions in core/failure.
+  - ViewModels must map Either results to UI states explicitly.
+
+- Testing:
+
+  - Generate unit tests for ViewModels when requested.
+  - Tests must mock repositories and return Either values.
+  - Tests must assert state transitions, not UI output.
+
+- fpdart usage:
+  - Use Either for error handling.
+  - Avoid imperative error handling (try/catch in ViewModels).
+  - Use match / fold for result handling.
+
+State management rules:
+
+- Use Riverpod providers exclusively.
+- Prefer StateNotifierProvider or AsyncNotifier when appropriate.
+- State must always be immutable.
+- Use Freezed union states for loading / success / error.
+- Avoid mutable fields inside ViewModels.
+
+Dependency Injection:
+
+- Register all services in GetIt.
+- GetIt must be used only at the composition root.
+- Widgets must never access GetIt directly.
+- ViewModels must receive dependencies via providers, not GetIt.
+- All dependency registrations must be centralized in a single injector file.
+
+Navigation:
+
+- Use AutoRoute exclusively for navigation.
+- Routes must be defined declaratively.
+- Navigation decisions must be triggered by View state changes, not business logic.
+- ViewModels must expose navigation intent as state, not perform navigation themselves.
+
+Networking:
+
+- Use Dio with interceptors.
+- No direct HTTP calls outside data sources.
+- Map network and parsing errors to domain-level failures.
+- Do not leak Dio exceptions beyond the data layer.
+
+Code style:
+
+- Prefer composition over inheritance.
+- Keep files small and single-purpose.
+- Use clear, intention-revealing names.
+- Avoid unnecessary abstractions.
+- Favor explicit typing over dynamic.
+
+When generating code:
+
+- Generate complete, production-ready files.
+- Follow the existing folder and feature structure.
+- Do not include placeholder TODOs unless explicitly requested.
+- Ensure all code is null-safe and consistent.
+
+Do not:
+
+- Introduce Bloc, Cubit, legacy Provider, or other state management solutions.
+- Mix architectural patterns.
+- Place logic inside UI widgets.
+- Perform navigation or dependency resolution inside ViewModels.
