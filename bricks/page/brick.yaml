@@ -1,0 +1,18 @@
+name: page
+description: Creates a new page and its ViewModel/state inside an existing feature.
+version: 0.1.0
+repository: https://github.com/kaplan2000/flutter-mason-bricks
+
+environment:
+  mason: ">=0.1.0-dev.52 <1.0.0"
+
+vars:
+  feature_name:
+    type: string
+    description: The name of the feature (snake_case)
+    prompt: What is the name of the feature?
+  page_name:
+    type: string
+    description: The name of the page (snake_case)
+    prompt: What is the name of the page?
+

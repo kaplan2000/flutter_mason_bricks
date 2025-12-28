@@ -4,9 +4,12 @@ A collection of opinionated [Mason](https://github.com/felangel/mason) bricks fo
 
 ## Bricks
 
-| Brick                   | Description                                                       | Version |
-| ----------------------- | ----------------------------------------------------------------- | ------- |
-| [setup](./bricks/setup) | Initial Flutter project setup with MVVM, Riverpod, and AutoRoute. | 0.0.1   |
+| Brick                       | Description                                                            | Version |
+| --------------------------- | ---------------------------------------------------------------------- | ------- |
+| [setup](./bricks/setup)     | Initial Flutter project setup with MVVM, Riverpod, and AutoRoute.      | 0.1.0   |
+| [feature](./bricks/feature) | Creates a new feature folder with base clean architecture structure.   | 0.1.0   |
+| [page](./bricks/page)       | Creates a new page and its ViewModel/state inside an existing feature. | 0.1.0   |
+| [flow](./bricks/flow)       | Creates a full data flow skeleton (domain → data) for a feature.       | 0.1.0   |
 
 ## Usage
 
@@ -18,15 +21,40 @@ bricks:
     git:
       url: https://github.com/kaplan2000/flutter_mason_bricks
       path: bricks/setup
-      # Use 'ref' to lock to a specific version (tag or commit)
-      ref: v0.0.1
+      ref: v0.1.0
+  feature:
+    git:
+      url: https://github.com/kaplan2000/flutter_mason_bricks
+      path: bricks/feature
+      ref: v0.1.0
+  page:
+    git:
+      url: https://github.com/kaplan2000/flutter_mason_bricks
+      path: bricks/page
+      ref: v0.1.0
+  flow:
+    git:
+      url: https://github.com/kaplan2000/flutter_mason_bricks
+      path: bricks/flow
+      ref: v0.1.0
 ```
 
 Then run:
 
 ```bash
 mason get
+
+# To setup a new project
 mason make setup
+
+# To create a new feature
+mason make feature --feature_name my_feature
+
+# To create a new page in a feature
+mason make page --feature_name my_feature --page_name my_page
+
+# To create a new data flow (domain + data)
+mason make flow --feature_name my_feature --flow_name my_flow --has_remote true --has_mock false
 ```
 
 ## Usage & Contributions
