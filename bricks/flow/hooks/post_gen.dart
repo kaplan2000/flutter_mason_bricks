@@ -24,11 +24,3 @@ void run(HookContext context) {
     }
   }
 }
-
-extension on String {
-  String get snakeCase {
-    final exp = RegExp('(?<=[a-z0-9])(?=[A-Z])');
-    return replaceAll(exp, '_').toLowerCase();
-  }
-}
-
