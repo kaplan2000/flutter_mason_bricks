@@ -1,6 +1,6 @@
 name: feature
 description: Creates a new feature folder with base clean architecture structure.
-version: 0.1.2
+version: 0.1.3
 repository: https://github.com/kaplan2000/flutter-mason-bricks
 
 environment:

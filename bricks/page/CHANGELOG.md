@@ -2,6 +2,12 @@
 
 All notable changes to the `page` brick will be documented in this file.
 
+## [0.1.3] - 2025-12-28
+
+### Added
+
+- Added `post_gen` hook to automatically register the new page in `lib/app/router/app_router.dart` when `use_autoroute` is true.
+
 ## [0.1.2] - 2025-12-28
 
 ### Added
